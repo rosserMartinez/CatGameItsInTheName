@@ -28,7 +28,7 @@ public class InteractableScript : MonoBehaviour {
 
 		if (IsInteractableByPhysicalCat = true && col.gameObject.tag == "AstralCat") 
 		{
-			SendMessage ("EnteredObjectRange", col.gameObject);
+			SendMessage ("ExitedObjectRange", col.gameObject);
 		}
 	}
 }
