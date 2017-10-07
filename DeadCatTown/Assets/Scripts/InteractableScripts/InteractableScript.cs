@@ -6,16 +6,16 @@ public class InteractableScript : MonoBehaviour {
 
 	public bool IsInteractableByPhysicalCat = false;
 
-	void OnTriggerStay(Collider col)
+	void OnTriggerEnter(Collider col)
 	{
 		if (IsInteractableByPhysicalCat = true && col.gameObject.tag == "PhysicalCat") 
 		{
-			SendMessage ("EnteredObjectRange");
+			SendMessage ("EnteredObjectRange", col.gameObject);
 		}
 
 		if (IsInteractableByPhysicalCat = true && col.gameObject.tag == "AstralCat") 
 		{
-			SendMessage ("EnteredObjectRange");
+			SendMessage ("EnteredObjectRange", col.gameObject);
 		}
 	}
 
@@ -23,12 +23,12 @@ public class InteractableScript : MonoBehaviour {
 	{
 		if (IsInteractableByPhysicalCat = true && col.gameObject.tag == "PhysicalCat") 
 		{
-			SendMessage ("ExitedObjectRange");
+			SendMessage ("ExitedObjectRange", col.gameObject);
 		}
 
 		if (IsInteractableByPhysicalCat = true && col.gameObject.tag == "AstralCat") 
 		{
-			SendMessage ("EnteredObjectRange");
+			SendMessage ("EnteredObjectRange", col.gameObject);
 		}
 	}
 }
