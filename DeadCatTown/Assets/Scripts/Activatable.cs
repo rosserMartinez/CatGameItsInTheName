@@ -16,7 +16,7 @@ public class Activatable : MonoBehaviour, IActivatable
 		
 	}
 
-    public void toggleActivation()
+    public virtual void toggleActivation()
     {
         isActive = !isActive;
     }

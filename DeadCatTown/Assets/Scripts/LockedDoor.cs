@@ -21,11 +21,16 @@ public class LockedDoor : MonoBehaviour
         {
             if (canOpen(player))
             {
-                opened = true;
-                GetComponent<BoxCollider>().isTrigger = true;
+                open();
             }
         }
 	}
+
+    public void open()
+    {
+        opened = true;
+        GetComponent<BoxCollider>().isTrigger = true;
+    }
 
     bool canOpen(PlayerInventory _player)
     {

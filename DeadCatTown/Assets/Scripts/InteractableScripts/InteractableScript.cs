@@ -22,7 +22,6 @@ public class InteractableScript : MonoBehaviour {
 			SendMessage ("EnteredObjectRange", col.gameObject);
 
             meshRenderer.material.SetFloat("_Metallic", 1);
-
         }
     }
 
