@@ -11,6 +11,9 @@ public class DestroyOnAudioStop : MonoBehaviour
 	void Start ()
     {
         source = GetComponent<AudioSource>();
+
+        if (source == null)
+            Destroy(this);
 	}
 	
 	// Update is called once per frame

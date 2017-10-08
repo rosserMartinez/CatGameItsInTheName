@@ -11,6 +11,7 @@ public class NodeMover : MonoBehaviour
     bool reversing = false;
     bool inMotion = false;
     List<Transform> nodes = null;
+    List<Vector3> nodePositions = null;
     int currentNode;
     Vector3 startPosition;
     Vector3 nextPosition;
@@ -23,10 +24,29 @@ public class NodeMover : MonoBehaviour
     {
         nodes = new List<Transform>(transform.Find("Nodes").GetComponentsInChildren<Transform>());
 
+        nodes.Insert(0, transform);
+
+        initNodePositions();
+
         if (startImmidiately)
             startMovement();
 	}
 	
+    void initNodePositions()
+    {
+        Transform nodeParent = transform.Find("Nodes");
+
+        nodePositions = new List<Vector3>();
+
+        foreach(Transform node in nodes)
+        {
+            if (node == nodeParent)
+                continue;
+
+            nodePositions.Add(node.position);
+        }
+    }
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -41,13 +61,19 @@ public class NodeMover : MonoBehaviour
 
 		//print (percentComplete);
         Vector3 lerpPos = Vector3.Lerp(startPosition, nextPosition, percentComplete);
-		if (percentComplete >= 1f) {
-			if (!reversing)
+		if (percentComplete >= 1f)
+        {
+            startPosition = nodePositions[currentNode];
+
+            if (!reversing)
 				currentNode++;
 			else
 				currentNode--;
 
-			if (currentNode == nodes.Count) 
+
+            Debug.Log(currentNode);
+
+            if (currentNode == nodePositions.Count) 
 			{
 				if (stopOnCompletion) {
 					stopMovement ();
@@ -55,11 +81,12 @@ public class NodeMover : MonoBehaviour
 					return;
 				}
 
-				reversing = true;
-
-				currentNode = nodes.Count - 2;
-			} else if (currentNode < 0) {
-				if (stopOnCompletion) {
+				startMovementFromNode(nodePositions.Count - 1, true);
+			}
+            else if (reversing && currentNode <= 0)
+            {
+				if (stopOnCompletion)
+                {
 					stopMovement ();
 
 					return;
@@ -67,47 +94,101 @@ public class NodeMover : MonoBehaviour
 
 				reversing = false;
 
-				currentNode = 0;
+                startMovementFromNode(0);
 			}
 
 			lerpStartTime = Time.time;
 
-			startPosition = transform.position;
-
-			nextPosition = nodes [currentNode].position;
+			nextPosition = nodePositions[currentNode];
 			//print ("start pos is " + startPosition);
 			//print ("next pos is " + nextPosition);
-		} 
+		}
 
 			transform.position = lerpPos;
-		
-
     }
 
 
     public void startMovement(bool _isReversed = false)
     {
+        if (inMotion)
+            return;
 
-        if (nodes == null)
+        if (nodePositions == null)
         {
             Debug.LogError("NodeMover " + gameObject.name + " has no nodes");
             return;
         }
 
-		AudioSystem.playLocalAudio (AudioType.OpenDoor, transform.position, .3f);
+        //AudioSystem.playLocalAudio (AudioType.OpenDoor, transform.position, .3f);
+        int startNode;
+
         if (_isReversed)
-            currentNode = nodes.Count - 1;
+        {
+            startNode = nodePositions.Count - 1;
+            currentNode = startNode - 1;
+        }
         else
-            currentNode = 0;
+        {
+            startNode = 0;
+            currentNode = startNode + 1;
+        }
 
-		lerpStartTime = Time.time;
+        if (currentNode < 0 || currentNode == nodePositions.Count)
+            return;
 
-        startPosition = transform.position;
+        Debug.Log(currentNode);
 
-        nextPosition = nodes[currentNode].position;
+        lerpStartTime = Time.time;
+
+        startPosition = nodePositions[startNode];
+
+        nextPosition = nodePositions[currentNode];
+
+        reversing = _isReversed;
 
         inMotion = true;
-		//print ("inMotion");
+    }
+
+    public void startMovementFromNode(int _nodeIndex, bool _isReversed = false)
+    {
+        if (inMotion)
+            return;
+
+        if (nodePositions == null)
+        {
+            Debug.LogError("NodeMover " + gameObject.name + " has no nodes");
+            return;
+        }
+
+        //AudioSystem.playLocalAudio (AudioType.OpenDoor, transform.position, .3f);
+        int startNode = _nodeIndex;
+
+        if (_isReversed)
+        {
+            currentNode = startNode - 1;
+        }
+        else
+        {
+            currentNode = startNode + 1;
+        }
+
+        if (currentNode < 0 || currentNode <= nodePositions.Count)
+        {
+            Debug.LogError("NodeMover " + gameObject.name + " attempted out of range movement");
+            return;
+        }
+
+        Debug.Log(currentNode);
+
+        lerpStartTime = Time.time;
+
+        startPosition = nodePositions[startNode];
+
+        nextPosition = nodePositions[currentNode];
+
+        reversing = _isReversed;
+
+        inMotion = true;
     }
 
     public void stopMovement()

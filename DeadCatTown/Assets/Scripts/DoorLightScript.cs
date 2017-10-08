@@ -25,13 +25,13 @@ public class DoorLightScript : Activatable {
 
 	public void TurnOn()
 	{
-		print ("light Should Activate");
+		//print ("light Should Activate");
 		gameObject.SetActive (true);
 	}
 
 	public void TurnOff()
 	{
-		print ("light Should DeActivate");
+		//print ("light Should DeActivate");
 		gameObject.SetActive (false);
 	}
 }

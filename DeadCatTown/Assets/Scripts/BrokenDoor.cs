@@ -15,6 +15,7 @@ public class BrokenDoor : Activatable
 
     public void close()
     {
+        Debug.Log("called");
         opened = false;
 		GetComponent<NodeMover>().startMovement(true);
         GetComponent<BoxCollider>().isTrigger = false;
