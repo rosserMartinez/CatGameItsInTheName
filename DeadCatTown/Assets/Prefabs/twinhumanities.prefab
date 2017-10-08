@@ -118,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1329824602696344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.96, z: 0}
+  m_LocalPosition: {x: 3.89, y: 0.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4171721847304434}
@@ -324,7 +324,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   checkDist: 0.7
-  tetherDist: 7
+  tetherDist: 15
   spiritCat: {fileID: 1767746365381038}
   rayPosition: {x: -0.75, y: 0.45999998, z: 1}
   tmpDist: 0
@@ -354,10 +354,11 @@ MonoBehaviour:
   moveSpeed: 9
   outOfRange: 0
   baseCat: {fileID: 1851945503686284}
-  tetherDist: 7
+  tetherDist: 13
   initPosition: {x: -0.75, y: 0.45999998, z: 1}
   returningToBody: 0
   soulReturnTime: 0.4071295
+  SpiritIsFrozen: 0
 --- !u!135 &135182131081194682
 SphereCollider:
   m_ObjectHideFlags: 1
