@@ -11,7 +11,7 @@ public class InteractableScript : MonoBehaviour {
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
-        defaultMetallic = meshRenderer.material.GetFloat("_Metallic");
+      //  defaultMetallic = meshRenderer.material.GetFloat("_Metallic");
     }
 
     void OnTriggerEnter(Collider col)

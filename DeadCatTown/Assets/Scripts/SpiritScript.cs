@@ -67,7 +67,7 @@ public class SpiritScript : MonoBehaviour {
 
 				float tmpDist = Vector3.Distance (baseCat.transform.position, initPosition);
 				if (tmpDist <= tetherDist) {
-					Debug.Log ("nawwww");
+				//	Debug.Log ("nawwww");
 					transform.position += rightMove;
 					transform.position += upMove;
 

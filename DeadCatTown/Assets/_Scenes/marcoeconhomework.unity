@@ -2130,6 +2130,19 @@ Transform:
   m_PrefabParentObject: {fileID: 4055799400091452, guid: 3ad6e36e1ff19c94d8ce12ee000b35c1,
     type: 2}
   m_PrefabInternal: {fileID: 1554524820}
+--- !u!114 &701158367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 701158358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bbf00f33419d2643ad8afea07fbaf3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactable: 0.0714
+  uninteractable: 0
 --- !u!1001 &718519393
 Prefab:
   m_ObjectHideFlags: 0
@@ -4534,7 +4547,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 218e5d289fe0b9a4d9a1798a53210ca1, type: 2}
+      objectReference: {fileID: 2100000, guid: ceed80e6a13c4664eb9a3150c5febc9c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ad6e36e1ff19c94d8ce12ee000b35c1, type: 2}
   m_IsPrefabParent: 0
