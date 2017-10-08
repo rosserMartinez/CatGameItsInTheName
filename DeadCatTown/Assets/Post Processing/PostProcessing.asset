@@ -25,7 +25,7 @@ MonoBehaviour:
         motionVectorsResolution: 24
         motionVectorsAmplitude: 64
   fog:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       excludeSkybox: 1
   antialiasing:
@@ -42,7 +42,7 @@ MonoBehaviour:
   ambientOcclusion:
     m_Enabled: 1
     m_Settings:
-      intensity: 0.55
+      intensity: 0.48
       radius: 2
       sampleCount: 16
       downsampling: 1
@@ -103,8 +103,8 @@ MonoBehaviour:
         intensity: 0.4
         threshold: 0.7
         softKnee: 0.346
-        radius: 4.08
-        antiFlicker: 0
+        radius: 3.69
+        antiFlicker: 1
       lensDirt:
         texture: {fileID: 0}
         intensity: 3
@@ -122,17 +122,17 @@ MonoBehaviour:
       basic:
         postExposure: 0
         temperature: -14
-        tint: 13
+        tint: 24
         hueShift: 0
         saturation: 1
         contrast: 1.12
       channelMixer:
-        red: {x: 0, y: 0, z: 0}
+        red: {x: 0.43, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
         blue: {x: 0, y: 0, z: 1}
         currentEditingChannel: 0
       colorWheels:
-        mode: 1
+        mode: 0
         log:
           slope: {r: 1, g: 1, b: 1, a: 0}
           power: {r: 1, g: 1, b: 1, a: 0}
@@ -298,7 +298,7 @@ MonoBehaviour:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.33
+      intensity: 0.383
       smoothness: 0.153
       roundness: 1
       mask: {fileID: 0}
