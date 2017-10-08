@@ -19,9 +19,12 @@ public class CameraFollowScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Vector3 moveCamera = new Vector3(catToFollow.transform.position.x, catToFollow.transform.position.y, catToFollow.transform.position.z);
+		if (catToFollow != null) 
+		{
+			Vector3 moveCamera = new Vector3(catToFollow.transform.position.x, catToFollow.transform.position.y, catToFollow.transform.position.z);
+			transform.position = Vector3.Lerp(transform.position, moveCamera, bigSmooth * Time.deltaTime);
+		}
 
-		transform.position = Vector3.Lerp(transform.position, moveCamera, bigSmooth * Time.deltaTime);
 
 
 		///////////////////////to track astral, lerp to midpoint instead of cat itself

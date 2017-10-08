@@ -21,7 +21,7 @@ public class FollowPlayerScript : MonoBehaviour {
 
 
 		//lerp to position
-		this.transform.position = new Vector3(cat.transform.position.x - 11, cat.transform.position.y + 10, cat.transform.position.z - 11);
-
+		transform.position = new Vector3(cat.transform.position.x - 11, cat.transform.position.y + 10, cat.transform.position.z + 11);
+		//transform.position = new Vector3(midpoint.x - 11, midpoint.y + 10, midpoint.z + 11);
 	}
 }

@@ -6,7 +6,9 @@ public enum AudioType
 {
     TEST,
     CLOSE_TO_OBJ,
-    KAKAROTT
+    KAKAROTT,
+	ElectricHum,
+	LightbulHum
 }
 
 [System.Serializable]
