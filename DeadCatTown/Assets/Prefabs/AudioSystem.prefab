@@ -133,8 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips:
-  - audioType: 0
-    audioClip: {fileID: 8300000, guid: 6622b5d01ba120248a2d2f992fb1da2b, type: 3}
+  - audioType: 8
+    audioClip: {fileID: 8300000, guid: a7489a494b11ccb4fb3238f4a893397c, type: 3}
   - audioType: 2
     audioClip: {fileID: 8300000, guid: 64b5a9e98430a6040808940cf8dda77c, type: 3}
   - audioType: 3
