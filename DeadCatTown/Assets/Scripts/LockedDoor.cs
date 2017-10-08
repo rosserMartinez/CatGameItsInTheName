@@ -34,7 +34,7 @@ public class LockedDoor : MonoBehaviour
 		AudioSystem.playLocalAudio (AudioType.UnlockDoor, transform.position, 1f);
         opened = true;
         //GetComponent<BoxCollider>().isTrigger = true;
-        GetComponent<NodeMover>().startMovement();
+        GetComponent<NodeMover>().startMovement(false);
     }
 
     bool canOpen(PlayerInventory _player)

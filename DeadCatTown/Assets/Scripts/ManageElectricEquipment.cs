@@ -8,6 +8,7 @@ public class ManageElectricEquipment : AudioSystem {
 	public bool ElectricityIsOn = false;
 	public bool CheckForInput = false;
 	GameObject collidingCat = null;
+	Vector3 freezeCatAt = new Vector3();
 	/*
 		Put 'Electric' component on electrical stuff which will turn on when electricity is on
 	*/
@@ -30,12 +31,14 @@ public class ManageElectricEquipment : AudioSystem {
 				{
 					if (!ElectricityIsOn) 
 					{
+						collidingCat.GetComponent<SpiritScript> ().SpiritIsFrozen = true;
 						ElectricityIsOn = true;
 						TurnOnElectricStuff ();
 						//lock astral cat pos here
 					}
 					else if (ElectricityIsOn) 
 					{
+						collidingCat.GetComponent<SpiritScript> ().SpiritIsFrozen = false;
 						ElectricityIsOn = false;
 						TurnOffElectricStuff ();
 						//unlock astral cat pos
