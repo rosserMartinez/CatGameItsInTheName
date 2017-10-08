@@ -27,6 +27,10 @@ public class LockedDoor : MonoBehaviour
                 open();
             }
         }
+        else if(opened && canInteract && Input.GetKeyDown(KeyCode.E))
+        {
+            close();
+        }
 	}
 
     public void open()
@@ -35,6 +39,14 @@ public class LockedDoor : MonoBehaviour
         opened = true;
         //GetComponent<BoxCollider>().isTrigger = true;
         GetComponent<NodeMover>().startMovement(false);
+    }
+
+    public void close()
+    {
+        AudioSystem.playLocalAudio(AudioType.UnlockDoor, transform.position, 1f);
+        opened = false;
+        //GetComponent<BoxCollider>().isTrigger = true;
+        GetComponent<NodeMover>().startMovement(true);
     }
 
     bool canOpen(PlayerInventory _player)
