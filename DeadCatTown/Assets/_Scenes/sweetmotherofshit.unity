@@ -548,8 +548,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   checkDist: 0.7
-  speed: {x: 0, y: 0, z: 0}
-  force: {x: 0, y: 0, z: 0}
+  tetherDist: 7
+  spiritCat: {fileID: 0}
   rayPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &1669920314
 MeshRenderer:
@@ -904,13 +904,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 9
-  wallMask:
-    serializedVersion: 2
-    m_Bits: 0
-  checkDist: 0
-  speed: {x: 0, y: 0, z: 0}
-  force: {x: 0, y: 0, z: 0}
-  rayPosition: {x: 0, y: 0, z: 0}
+  baseCat: {fileID: 0}
+  tetherDist: 7
+  initPosition: {x: 0, y: 0, z: 0}
 --- !u!23 &2090677699
 MeshRenderer:
   m_ObjectHideFlags: 0

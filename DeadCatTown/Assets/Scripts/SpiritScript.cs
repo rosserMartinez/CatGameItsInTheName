@@ -18,12 +18,10 @@ public class SpiritScript : MonoBehaviour {
 	private Vector3 upMove;
 	private Vector3 rightMove;
 
-	public LayerMask wallMask;
-	public float checkDist;
+	public GameObject baseCat;
 
-	public Vector3 speed;
-	public Vector3 force;
-	public Vector3 rayPosition;
+	public float tetherDist;
+	public Vector3 initPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -37,15 +35,13 @@ public class SpiritScript : MonoBehaviour {
 
 		right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
 
-		speed = Vector3.zero;
-		force = Vector3.zero;
-
+		baseCat = GameObject.Find("CATWALK");
 	}
 
 	// Update is called once per frame
 	void Update () {
 
-	//	rayPosition = transform.position;
+		initPosition = transform.position;
 
 		Vector3 moveDirection = Vector3.zero;
 
@@ -59,13 +55,17 @@ public class SpiritScript : MonoBehaviour {
 			Vector3 fixedAxis = Vector3.Normalize(rightMove + upMove);
 			transform.forward = fixedAxis;
 
-			//rayPosition += rightMove;
-			//rayPosition += upMove;	
+			initPosition += rightMove;
+			initPosition += upMove;	
 
+			float tmpDist = Vector3.Distance(baseCat.transform.position, initPosition);
+			if (tmpDist <= tetherDist)
+			{
 			Debug.Log("nawwww");
 			transform.position += rightMove;
 			transform.position += upMove;				
 
+			}
 
 		}
 
