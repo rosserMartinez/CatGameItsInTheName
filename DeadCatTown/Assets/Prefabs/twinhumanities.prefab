@@ -40,9 +40,25 @@ GameObject:
   - component: {fileID: 54303770574356596}
   - component: {fileID: 135182131081194682}
   - component: {fileID: 114870301298640928}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ASTRALCATWALK
   m_TagString: AstralCat
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1805909915862118
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4060572426454534}
+  - component: {fileID: 108628364845398504}
+  m_Layer: 9
+  m_Name: Point light
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,6 +77,7 @@ GameObject:
   - component: {fileID: 114613478651770672}
   - component: {fileID: 54430347009004306}
   - component: {fileID: 135993643035650472}
+  - component: {fileID: 114673832948168248}
   m_Layer: 0
   m_Name: CATWALK
   m_TagString: PhysicalCat
@@ -68,6 +85,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4060572426454534
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1805909915862118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4718627705779282}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4171721847304434
 Transform:
   m_ObjectHideFlags: 1
@@ -76,7 +106,7 @@ Transform:
   m_GameObject: {fileID: 1851945503686284}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.75, y: -0.5, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 4496843022308794}
   m_RootOrder: 0
@@ -88,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1329824602696344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.25, z: 0}
+  m_LocalPosition: {x: 0, y: 0.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4171721847304434}
@@ -104,8 +134,9 @@ Transform:
   m_GameObject: {fileID: 1767746365381038}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.75, y: -0.5, z: 1}
-  m_LocalScale: {x: 0.98, y: 0.98, z: 0.98}
-  m_Children: []
+  m_LocalScale: {x: 0.45, y: 0.7, z: 0.75}
+  m_Children:
+  - {fileID: 4060572426454534}
   m_Father: {fileID: 4496843022308794}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -241,6 +272,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!108 &108628364845398504
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1805909915862118}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 0.24264705, g: 0.9686611, b: 1, a: 1}
+  m_Intensity: 0.75
+  m_Range: 4
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &114613478651770672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,6 +327,18 @@ MonoBehaviour:
   tetherDist: 7
   spiritCat: {fileID: 0}
   rayPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &114673832948168248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1851945503686284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0603b10175aa14ea381a6743499360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keys: []
 --- !u!114 &114870301298640928
 MonoBehaviour:
   m_ObjectHideFlags: 1

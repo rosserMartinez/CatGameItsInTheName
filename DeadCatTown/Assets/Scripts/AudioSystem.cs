@@ -10,7 +10,9 @@ public enum AudioType
 	ElectricHum,
 	LightbulHum,
 	BreakerSwitch,
-	OpenDoor
+	OpenDoor,
+	UnlockDoor,
+	wat
 }
 
 [System.Serializable]

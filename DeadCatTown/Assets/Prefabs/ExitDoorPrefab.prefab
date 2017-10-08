@@ -57,11 +57,10 @@ GameObject:
   - component: {fileID: 4054984754564096}
   - component: {fileID: 23011584707955514}
   - component: {fileID: 65785107319874264}
-  - component: {fileID: 65593389582462256}
   - component: {fileID: 114795866070356354}
   - component: {fileID: 114311653489156826}
   - component: {fileID: 114811659850704254}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LockedDoor2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,6 +92,7 @@ GameObject:
   - component: {fileID: 4605943682866272}
   - component: {fileID: 33982299205868480}
   - component: {fileID: 23394142199355258}
+  - component: {fileID: 65780099411280418}
   m_Layer: 8
   m_Name: pCube6
   m_TagString: Untagged
@@ -558,18 +558,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 1, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65593389582462256
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1338583758131940}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.43, y: 2.84, z: 0.62}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65762439240474810
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -582,6 +570,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65780099411280418
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1485891177469138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5000007, y: 2.5, z: 0.20000009}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65785107319874264
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -592,7 +592,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.99, y: 2.47, z: 1.69}
+  m_Size: {x: 1.99, y: 2.47, z: 2.47}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65997090838228566
 BoxCollider:

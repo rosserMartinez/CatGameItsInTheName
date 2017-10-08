@@ -87,12 +87,14 @@ public class NodeMover : MonoBehaviour
 
     public void startMovement(bool _isReversed = false)
     {
+
         if (nodes == null)
         {
             Debug.LogError("NodeMover " + gameObject.name + " has no nodes");
             return;
         }
 
+		AudioSystem.playLocalAudio (AudioType.OpenDoor, transform.position, .5f);
         if (_isReversed)
             currentNode = nodes.Count - 1;
         else
