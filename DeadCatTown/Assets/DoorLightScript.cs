@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class DoorLightScript : Activatable {
 
-
+	public bool StartOnAwake = false;
+	void Start()
+	{
+		if (StartOnAwake) {
+			TurnOn ();
+		} else
+			TurnOff ();
+	}
 	public override void toggleActivation()
 	{
 		

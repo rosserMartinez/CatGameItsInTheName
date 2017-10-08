@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ManageElectricEquipment : MonoBehaviour {
+public class ManageElectricEquipment : AudioSystem {
 
 	public List<GameObject> ElectricStuffInRoom = new List<GameObject>();
 	public bool ElectricityIsOn = false;
@@ -53,6 +53,7 @@ public class ManageElectricEquipment : MonoBehaviour {
 
 	public void EnteredObjectRange(GameObject _currentCatCol)
 	{
+		
 		//print ("Got the mesg");
 		CheckForInput = true;
 		collidingCat = _currentCatCol;
@@ -66,6 +67,7 @@ public class ManageElectricEquipment : MonoBehaviour {
 
 	public void TurnOnElectricStuff()
 	{
+		playLocalAudio (AudioType.BreakerSwitch, transform.position, GetComponent<AudioSource>().volume, false);
 		foreach(GameObject appliance in ElectricStuffInRoom)
 			{
 			//activate appliance, turn on lights... etc

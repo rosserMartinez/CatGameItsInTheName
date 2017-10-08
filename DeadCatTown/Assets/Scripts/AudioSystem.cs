@@ -8,7 +8,8 @@ public enum AudioType
     CLOSE_TO_OBJ,
     KAKAROTT,
 	ElectricHum,
-	LightbulHum
+	LightbulHum,
+	BreakerSwitch
 }
 
 [System.Serializable]
@@ -36,7 +37,7 @@ public class AudioSystem : MonoBehaviour
             Destroy(gameObject);
 
         mainAudioSource = GetComponent<AudioSource>();
-        playLocalAudio(AudioType.TEST, transform.position, true);
+        //playLocalAudio(AudioType.TEST, transform.position, true);
     }
 
     // Update is called once per frame
@@ -45,7 +46,7 @@ public class AudioSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
             playGlobalAudio(AudioType.TEST, true);
         else if (Input.GetKeyDown(KeyCode.T))
-            playLocalAudio(AudioType.KAKAROTT, transform.position);
+            playLocalAudio(AudioType.KAKAROTT, transform.position, 1f);
 
 	}
 
@@ -57,7 +58,7 @@ public class AudioSystem : MonoBehaviour
         instance.mainAudioSource.Play();
     }
 
-    public static GameObject playLocalAudio(AudioType _type, Vector3 _sourcePosition, bool _looped = false)
+	public static GameObject playLocalAudio(AudioType _type, Vector3 _sourcePosition, float _volume, bool _looped = false)
     {
         if (!hasClip(_type))
             return null;
@@ -73,6 +74,8 @@ public class AudioSystem : MonoBehaviour
         newSource.clip = getClip(_type);
 
         newSource.loop = _looped;
+
+		newSource.volume = _volume;
 
         newSource.Play();
 

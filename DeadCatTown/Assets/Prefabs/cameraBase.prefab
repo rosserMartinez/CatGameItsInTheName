@@ -52,27 +52,27 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1157087945068356}
-  m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: 0, y: 10, z: -10}
+  m_LocalRotation: {x: 0.27781588, y: 0.36497167, z: -0.1150751, w: 0.8811196}
+  m_LocalPosition: {x: -5.79, y: 5.74, z: -4.33}
   m_LocalScale: {x: 1, y: 1.0002118, z: 1.0002122}
   m_Children: []
   m_Father: {fileID: 4876573028404954}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 35, y: 45.000004, z: 0}
 --- !u!4 &4876573028404954
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1357060539936060}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4173620229052900}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!20 &20455234269050764
 Camera:
   m_ObjectHideFlags: 1
@@ -81,8 +81,8 @@ Camera:
   m_GameObject: {fileID: 1157087945068356}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.65517235, g: 0, b: 1, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.17587774, g: 0.13283955, b: 0.19852942, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -90,10 +90,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.001
-  far clip plane: 1000
+  far clip plane: 50
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4
   m_Depth: -3
   m_CullingMask:
     serializedVersion: 2
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f5f19629726b4f47b3f4efd70a62611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bigSmooth: 1
+  bigSmooth: 5
 --- !u!124 &124511108578561580
 Behaviour:
   m_ObjectHideFlags: 1

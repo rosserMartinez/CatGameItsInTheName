@@ -8,6 +8,7 @@ public class BrokenDoor : Activatable
     public void open()
     {
         opened = true;
+		GetComponent<NodeMover>().startMovement();
         GetComponent<BoxCollider>().isTrigger = true;
     }
 
