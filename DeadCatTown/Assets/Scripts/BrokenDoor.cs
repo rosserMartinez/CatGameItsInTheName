@@ -6,7 +6,8 @@ public class BrokenDoor : Activatable
     bool opened = false;
 
     public void open()
-    {
+    {//why does the door take so long to open
+		AudioSystem.playLocalAudio (AudioType.OpenDoor, transform.position, 1f);
         opened = true;
 		GetComponent<NodeMover>().startMovement();
         GetComponent<BoxCollider>().isTrigger = true;

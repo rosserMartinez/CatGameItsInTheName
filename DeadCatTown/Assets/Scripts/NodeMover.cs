@@ -41,13 +41,14 @@ public class NodeMover : MonoBehaviour
 
 		//print (percentComplete);
         Vector3 lerpPos = Vector3.Lerp(startPosition, nextPosition, percentComplete);
-		if (percentComplete >= 1.0f) {
+		if (percentComplete >= 1f) {
 			if (!reversing)
 				currentNode++;
 			else
 				currentNode--;
 
-			if (currentNode == nodes.Count) {
+			if (currentNode == nodes.Count) 
+			{
 				if (stopOnCompletion) {
 					stopMovement ();
 

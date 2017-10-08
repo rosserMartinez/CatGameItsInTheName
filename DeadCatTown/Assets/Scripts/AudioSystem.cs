@@ -9,7 +9,8 @@ public enum AudioType
     KAKAROTT,
 	ElectricHum,
 	LightbulHum,
-	BreakerSwitch
+	BreakerSwitch,
+	OpenDoor
 }
 
 [System.Serializable]
