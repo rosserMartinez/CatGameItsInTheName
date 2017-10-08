@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 23850031807575866}
   - component: {fileID: 114567797010790234}
   - component: {fileID: 54135744754041914}
+  - component: {fileID: 114587623703844762}
   m_Layer: 0
   m_Name: CATWALK
-  m_TagString: Player
+  m_TagString: PhysicalCat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,3 +152,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 9
+--- !u!114 &114587623703844762
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1116857300308880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0603b10175aa14ea381a6743499360, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keys: []

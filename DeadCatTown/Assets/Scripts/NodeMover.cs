@@ -36,52 +36,51 @@ public class NodeMover : MonoBehaviour
     
     void move()
     {
-		float currentLerpTime = Time.deltaTime - lerpStartTime;
+		float currentLerpTime = Time.time - lerpStartTime;
         float percentComplete = currentLerpTime / lerpSpeed;
 
+		//print (percentComplete);
         Vector3 lerpPos = Vector3.Lerp(startPosition, nextPosition, percentComplete);
-        if(percentComplete >= 1.0f)
-        {
-            if (!reversing)
-                currentNode++;
-            else
-                currentNode--;
+		if (percentComplete >= 1.0f) {
+			if (!reversing)
+				currentNode++;
+			else
+				currentNode--;
 
-            if (currentNode == nodes.Count)
-            {
-                if (stopOnCompletion)
-                {
-                    stopMovement();
+			if (currentNode == nodes.Count) {
+				if (stopOnCompletion) {
+					stopMovement ();
 
-                    return;
-                }
+					return;
+				}
 
-                reversing = true;
+				reversing = true;
 
-                currentNode = nodes.Count - 2;
-            }
-            else if(currentNode < 0)
-            {
-                if (stopOnCompletion)
-                {
-                    stopMovement();
+				currentNode = nodes.Count - 2;
+			} else if (currentNode < 0) {
+				if (stopOnCompletion) {
+					stopMovement ();
 
-                    return;
-                }
+					return;
+				}
 
-                reversing = false;
+				reversing = false;
 
-                currentNode = 0;
-            }
+				currentNode = 0;
+			}
 
-			lerpStartTime = Time.deltaTime;
+			lerpStartTime = Time.time;
 
-            startPosition = transform.position;
+			startPosition = transform.position;
 
-            nextPosition = nodes[currentNode].position;
-        }
+			nextPosition = nodes [currentNode].position;
+			//print ("start pos is " + startPosition);
+			//print ("next pos is " + nextPosition);
+		} 
 
-        transform.position = lerpPos;
+			transform.position = lerpPos;
+		
+
     }
 
 
@@ -98,13 +97,14 @@ public class NodeMover : MonoBehaviour
         else
             currentNode = 0;
 
-		lerpStartTime = Time.deltaTime;
+		lerpStartTime = Time.time;
 
         startPosition = transform.position;
 
         nextPosition = nodes[currentNode].position;
 
         inMotion = true;
+		//print ("inMotion");
     }
 
     public void stopMovement()

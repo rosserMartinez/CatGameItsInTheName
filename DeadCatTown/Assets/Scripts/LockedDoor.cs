@@ -20,8 +20,10 @@ public class LockedDoor : MonoBehaviour
     {
 		if(!opened && canInteract && Input.GetKeyDown(KeyCode.E))
         {
+			//print ("Checking if can open");
             if (canOpen(player))
             {
+				// ("opening");
                 open();
             }
         }
