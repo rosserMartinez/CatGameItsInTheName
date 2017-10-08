@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(NodeMover))]
 public class LockedDoor : MonoBehaviour
 {
     PlayerInventory player = null;
@@ -29,7 +30,8 @@ public class LockedDoor : MonoBehaviour
     public void open()
     {
         opened = true;
-        GetComponent<BoxCollider>().isTrigger = true;
+        //GetComponent<BoxCollider>().isTrigger = true;
+        GetComponent<NodeMover>().startMovement();
     }
 
     bool canOpen(PlayerInventory _player)
