@@ -4608,58 +4608,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4647487376656786, guid: e8811dd5a3aad4d4fa73a88e76f309cf,
     type: 2}
   m_PrefabInternal: {fileID: 1601209996}
---- !u!1001 &1659069763
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4987975027347844, guid: 3c75bcadac7c3a640862783c7bd47711, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 11.393049
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987975027347844, guid: 3c75bcadac7c3a640862783c7bd47711, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -3.4853406
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987975027347844, guid: 3c75bcadac7c3a640862783c7bd47711, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 3.5602152
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987975027347844, guid: 3c75bcadac7c3a640862783c7bd47711, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987975027347844, guid: 3c75bcadac7c3a640862783c7bd47711, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987975027347844, guid: 3c75bcadac7c3a640862783c7bd47711, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987975027347844, guid: 3c75bcadac7c3a640862783c7bd47711, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987975027347844, guid: 3c75bcadac7c3a640862783c7bd47711, type: 2}
-      propertyPath: m_RootOrder
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 114672647843257692, guid: 3c75bcadac7c3a640862783c7bd47711,
-        type: 2}
-      propertyPath: ElectricStuffInRoom.Array.data[2]
-      value: 
-      objectReference: {fileID: 1496214010}
-    - target: {fileID: 114672647843257692, guid: 3c75bcadac7c3a640862783c7bd47711,
-        type: 2}
-      propertyPath: ElectricStuffInRoom.Array.data[3]
-      value: 
-      objectReference: {fileID: 1078686511}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 3c75bcadac7c3a640862783c7bd47711, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1001 &1702806588
 Prefab:
   m_ObjectHideFlags: 0

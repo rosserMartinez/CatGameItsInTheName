@@ -25,7 +25,7 @@ public class ManageMenuUI : MonoBehaviour {
 
 	public void StartGame()
 	{
-		SceneManager.LoadScene ("TutorialLevel");
+		SceneManager.LoadScene ("TutorialScene");
 	}
 
 	public void ToTutorialCanvas()
