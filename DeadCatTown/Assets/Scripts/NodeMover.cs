@@ -8,6 +8,7 @@ public class NodeMover : MonoBehaviour
     public bool stopOnCompletion;
     public bool startImmidiately;
     public float lerpSpeed;
+    float lerpTime;
     public bool inMotion = false;
     bool reversing = false;
     List<Transform> nodes = null;
@@ -15,12 +16,12 @@ public class NodeMover : MonoBehaviour
     int currentNode;
     Vector3 startPosition;
     Vector3 nextPosition;
-//    float currentLerpDist;
+    //    float currentLerpDist;
     float lerpStartTime;
 
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         nodes = new List<Transform>(transform.Find("Nodes").GetComponentsInChildren<Transform>());
 
@@ -30,15 +31,15 @@ public class NodeMover : MonoBehaviour
 
         if (startImmidiately)
             startMovement();
-	}
-	
+    }
+
     void initNodePositions()
     {
         Transform nodeParent = transform.Find("Nodes");
 
         nodePositions = new List<Vector3>();
 
-        foreach(Transform node in nodes)
+        foreach (Transform node in nodes)
         {
             if (node == nodeParent)
                 continue;
@@ -47,30 +48,33 @@ public class NodeMover : MonoBehaviour
         }
     }
 
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update()
     {
         if (inMotion)
             move();
-	}
-    
+    }
+
     void move()
     {
-		float currentLerpTime = Time.time - lerpStartTime;
-        float percentComplete = currentLerpTime / lerpSpeed;
+        float currentLerpTime = Time.time - lerpStartTime;
+        float percentComplete = currentLerpTime / lerpTime;
 
-		//print (percentComplete);
+        //print (percentComplete);
         Vector3 lerpPos = Vector3.Lerp(startPosition, nextPosition, percentComplete);
-		if (percentComplete >= 1f)
+        if (percentComplete >= 1f)
         {
-            startPosition = nodePositions[currentNode];
+            if (!(currentNode < 0) && !(currentNode >= nodePositions.Count))
+            {
+                startPosition = nodePositions[currentNode];
+            }
 
             if (!reversing)
-				currentNode++;
-			else
-				currentNode--;
+                currentNode++;
+            else
+                currentNode--;
 
-            if (currentNode == nodePositions.Count)
+            if (currentNode >= nodePositions.Count)
             {
                 if (stopOnCompletion)
                 {
@@ -81,7 +85,7 @@ public class NodeMover : MonoBehaviour
 
                 startMovementFromNode(nodePositions.Count - 1, true);
             }
-            else if (reversing && currentNode <= 0)
+            else if (currentNode <= 0)
             {
                 if (stopOnCompletion)
                 {
@@ -94,18 +98,11 @@ public class NodeMover : MonoBehaviour
 
                 startMovementFromNode(0);
             }
-            else
-            {
+            //print ("start pos is " + startPosition);
+            //print ("next pos is " + nextPosition);  
+        }
 
-                lerpStartTime = Time.time;
-
-                nextPosition = nodePositions[currentNode];
-                //print ("start pos is " + startPosition);
-                //print ("next pos is " + nextPosition);
-            }
-		}
-
-			transform.position = lerpPos;
+        transform.position = lerpPos;
     }
 
 
@@ -142,6 +139,8 @@ public class NodeMover : MonoBehaviour
         startPosition = nodePositions[startNode];
 
         nextPosition = nodePositions[currentNode];
+
+        lerpTime = Vector3.Distance(startPosition, nextPosition) / lerpSpeed;
 
         reversing = _isReversed;
 
@@ -183,6 +182,8 @@ public class NodeMover : MonoBehaviour
 
         nextPosition = nodePositions[currentNode];
 
+        lerpTime = Vector3.Distance(startPosition, nextPosition) / lerpSpeed;
+
         reversing = _isReversed;
 
         inMotion = true;
@@ -204,6 +205,8 @@ public class NodeMover : MonoBehaviour
         startPosition = transform.position;
 
         nextPosition = nodePositions[0];
+
+        lerpTime = Vector3.Distance(startPosition, nextPosition) / lerpSpeed;
 
         reversing = true;
 
