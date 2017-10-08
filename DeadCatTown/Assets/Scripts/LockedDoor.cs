@@ -6,14 +6,16 @@ using UnityEngine;
 public class LockedDoor : MonoBehaviour
 {
     PlayerInventory player = null;
+    NodeMover currentMover = null;
     bool canInteract = false;
     bool opened = false;
 
 	// Use this for initialization
 	void Start ()
     {
-		
-	}
+        currentMover = GetComponent<NodeMover>();
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -38,7 +40,7 @@ public class LockedDoor : MonoBehaviour
 		AudioSystem.playLocalAudio (AudioType.UnlockDoor, transform.position, 1f);
         opened = true;
         //GetComponent<BoxCollider>().isTrigger = true;
-        GetComponent<NodeMover>().startMovement(false);
+        currentMover.startMovement(false);
     }
 
     public void close()
@@ -46,7 +48,7 @@ public class LockedDoor : MonoBehaviour
         AudioSystem.playLocalAudio(AudioType.UnlockDoor, transform.position, 1f);
         opened = false;
         //GetComponent<BoxCollider>().isTrigger = true;
-        GetComponent<NodeMover>().startMovement(true);
+        currentMover.startMovement(true);
     }
 
     bool canOpen(PlayerInventory _player)

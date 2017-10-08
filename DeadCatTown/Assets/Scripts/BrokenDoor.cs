@@ -1,9 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(NodeMover))]
 public class BrokenDoor : Activatable
 {
+    NodeMover currentMover;
     bool opened = false;
+
+
+    private void Start()
+    {
+        currentMover = GetComponent<NodeMover>();
+    }
 
     public void open()
     {//why does the door take so long to open
@@ -17,7 +25,7 @@ public class BrokenDoor : Activatable
     {
         Debug.Log("called");
         opened = false;
-		GetComponent<NodeMover>().startMovement(true);
+		GetComponent<NodeMover>().returnToStart(true);
         GetComponent<BoxCollider>().isTrigger = false;
     }
 

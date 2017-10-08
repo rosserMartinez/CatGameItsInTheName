@@ -8,14 +8,14 @@ public class NodeMover : MonoBehaviour
     public bool stopOnCompletion;
     public bool startImmidiately;
     public float lerpSpeed;
+    public bool inMotion = false;
     bool reversing = false;
-    bool inMotion = false;
     List<Transform> nodes = null;
     List<Vector3> nodePositions = null;
     int currentNode;
     Vector3 startPosition;
     Vector3 nextPosition;
-    float currentLerpDist;
+//    float currentLerpDist;
     float lerpStartTime;
 
 
@@ -70,38 +70,39 @@ public class NodeMover : MonoBehaviour
 			else
 				currentNode--;
 
+            if (currentNode == nodePositions.Count)
+            {
+                if (stopOnCompletion)
+                {
+                    stopMovement();
 
-            Debug.Log(currentNode);
+                    return;
+                }
 
-            if (currentNode == nodePositions.Count) 
-			{
-				if (stopOnCompletion) {
-					stopMovement ();
-
-					return;
-				}
-
-				startMovementFromNode(nodePositions.Count - 1, true);
-			}
+                startMovementFromNode(nodePositions.Count - 1, true);
+            }
             else if (reversing && currentNode <= 0)
             {
-				if (stopOnCompletion)
+                if (stopOnCompletion)
                 {
-					stopMovement ();
+                    stopMovement();
 
-					return;
-				}
+                    return;
+                }
 
-				reversing = false;
+                reversing = false;
 
                 startMovementFromNode(0);
-			}
+            }
+            else
+            {
 
-			lerpStartTime = Time.time;
+                lerpStartTime = Time.time;
 
-			nextPosition = nodePositions[currentNode];
-			//print ("start pos is " + startPosition);
-			//print ("next pos is " + nextPosition);
+                nextPosition = nodePositions[currentNode];
+                //print ("start pos is " + startPosition);
+                //print ("next pos is " + nextPosition);
+            }
 		}
 
 			transform.position = lerpPos;
@@ -135,8 +136,6 @@ public class NodeMover : MonoBehaviour
 
         if (currentNode < 0 || currentNode == nodePositions.Count)
             return;
-
-        Debug.Log(currentNode);
 
         lerpStartTime = Time.time;
 
@@ -178,8 +177,6 @@ public class NodeMover : MonoBehaviour
             return;
         }
 
-        Debug.Log(currentNode);
-
         lerpStartTime = Time.time;
 
         startPosition = nodePositions[startNode];
@@ -187,6 +184,28 @@ public class NodeMover : MonoBehaviour
         nextPosition = nodePositions[currentNode];
 
         reversing = _isReversed;
+
+        inMotion = true;
+    }
+
+    public void returnToStart(bool _interruptMotion = false)
+    {
+        if (inMotion && !_interruptMotion)
+            return;
+
+        if (nodePositions == null)
+        {
+            Debug.LogError("NodeMover " + gameObject.name + " has no nodes");
+            return;
+        }
+
+        lerpStartTime = Time.time;
+
+        startPosition = transform.position;
+
+        nextPosition = nodePositions[0];
+
+        reversing = true;
 
         inMotion = true;
     }
