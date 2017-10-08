@@ -147,6 +147,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114613478651770672, guid: c0fe2ddc4e710e945a9b777dd6d56e42,
+        type: 2}
+      propertyPath: tetherDist
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0fe2ddc4e710e945a9b777dd6d56e42, type: 2}
   m_IsPrefabParent: 0
@@ -472,15 +477,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4601573711012324, guid: 826f406bd94b13f4fb8a18485146931c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 11.71761
       objectReference: {fileID: 0}
     - target: {fileID: 4601573711012324, guid: 826f406bd94b13f4fb8a18485146931c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 0.06543231
       objectReference: {fileID: 0}
     - target: {fileID: 4601573711012324, guid: 826f406bd94b13f4fb8a18485146931c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.21934986
       objectReference: {fileID: 0}
     - target: {fileID: 4601573711012324, guid: 826f406bd94b13f4fb8a18485146931c, type: 2}
       propertyPath: m_LocalRotation.x

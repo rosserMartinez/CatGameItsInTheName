@@ -25,6 +25,7 @@ public class CatScript : MonoBehaviour {
 	public GameObject spiritCat;
 
 	public Vector3 rayPosition;
+	public float tmpDist;
 
 	// Use this for initialization
 	void Start () {
@@ -65,31 +66,19 @@ public class CatScript : MonoBehaviour {
 
 		if ((Physics.Raycast(rayPosition, fixedAxis, checkDist, wallMask)))
 		{
-				Debug.Log(" me");
-
-				//if states here determingin which direction youre pointing vs the wall
-
-
-				///     cehck rotation of objects in worldspace against eachother to determine angle youre at
-				///----------------
-				///    ^
-				///    []
-				///
-
-
 				return;
-
 		}
 		else 
 		{
 
-			float tmpDist = Vector3.Distance(spiritCat.transform.position, rayPosition);
+			tmpDist = Vector3.Distance(spiritCat.transform.position, rayPosition);
 			
 			if (tmpDist <= tetherDist)
 			{
 				transform.position += rightMove;
 				transform.position += upMove;				
 			}
+			
 		}
 
 

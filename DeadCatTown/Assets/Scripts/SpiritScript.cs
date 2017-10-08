@@ -11,6 +11,7 @@ public class SpiritScript : MonoBehaviour {
 	Rigidbody rb;
 
 	public float moveSpeed;
+	public bool outOfRange;
 
 	private Vector3 forward;
 	private Vector3 right;
@@ -22,6 +23,10 @@ public class SpiritScript : MonoBehaviour {
 
 	public float tetherDist;
 	public Vector3 initPosition;
+
+	public bool returningToBody;
+	public float soulReturnTime;
+	private float soulTime = 1f;
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +41,7 @@ public class SpiritScript : MonoBehaviour {
 		right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
 
 		baseCat = GameObject.Find("CATWALK");
+		returningToBody = false;
 	}
 
 	// Update is called once per frame
@@ -45,7 +51,7 @@ public class SpiritScript : MonoBehaviour {
 
 		Vector3 moveDirection = Vector3.zero;
 
-		if ( (Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)) 
+		if ( ((Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)) && !returningToBody) 
 		{
 			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
@@ -63,12 +69,28 @@ public class SpiritScript : MonoBehaviour {
 			{
 			Debug.Log("nawwww");
 			transform.position += rightMove;
-			transform.position += upMove;				
+			transform.position += upMove;
 
 			}
-
+	
+		}
+			
+		if (Input.GetKeyDown(KeyCode.R)) 
+		{
+			soulReturnTime = 0f;
 		}
 
+		if (soulReturnTime < soulTime)
+		{
+			soulReturnTime += Time.deltaTime;
+
+			if (soulReturnTime > soulTime) {
+				soulReturnTime = soulTime;
+			}
+
+			float progress = soulReturnTime / soulTime;
+			transform.position = Vector3.Lerp(transform.position, baseCat.transform.position, progress);
+		}
 
 	}
 }
