@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33029749827832798}
   - component: {fileID: 65859168060762588}
   - component: {fileID: 23852311670062010}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WallPiece (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 33128041424558250}
   - component: {fileID: 65498203884201614}
   - component: {fileID: 23320367674293264}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WallPiece (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4131263335291192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorPiece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 65061943735508212}
   - component: {fileID: 114927801524790388}
   - component: {fileID: 114761075835621704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 33043652939149506}
   - component: {fileID: 65312519611047784}
   - component: {fileID: 23096355550370326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WallPiece (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,8 +154,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1498108934437302}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 1.65, y: 1.5, z: -15}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.35, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4647225275381606}
