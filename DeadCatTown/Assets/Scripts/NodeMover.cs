@@ -94,7 +94,7 @@ public class NodeMover : MonoBehaviour
             return;
         }
 
-		AudioSystem.playLocalAudio (AudioType.OpenDoor, transform.position, .5f);
+		AudioSystem.playLocalAudio (AudioType.OpenDoor, transform.position, .3f);
         if (_isReversed)
             currentNode = nodes.Count - 1;
         else

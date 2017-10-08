@@ -12,7 +12,8 @@ public enum AudioType
 	BreakerSwitch,
 	OpenDoor,
 	UnlockDoor,
-	wat
+	Soundtrack,
+
 }
 
 [System.Serializable]
@@ -40,16 +41,16 @@ public class AudioSystem : MonoBehaviour
             Destroy(gameObject);
 
         mainAudioSource = GetComponent<AudioSource>();
-        //playLocalAudio(AudioType.TEST, transform.position, true);
+		playLocalAudio(AudioType.Soundtrack, transform.position, .4f, true);
     }
 
     // Update is called once per frame
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            playGlobalAudio(AudioType.TEST, true);
-        else if (Input.GetKeyDown(KeyCode.T))
-            playLocalAudio(AudioType.KAKAROTT, transform.position, 1f);
+      //  if (Input.GetKeyDown(KeyCode.Space))
+      //      playGlobalAudio(AudioType.TEST, true);
+       // else if (Input.GetKeyDown(KeyCode.T))
+      //      playLocalAudio(AudioType.KAKAROTT, transform.position, 1f);
 
 	}
 
