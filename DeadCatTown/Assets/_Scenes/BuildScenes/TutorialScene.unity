@@ -772,11 +772,6 @@ Prefab:
       propertyPath: ElectricStuffInRoom.Array.data[3]
       value: 
       objectReference: {fileID: 1078686511}
-    - target: {fileID: 82408704162400778, guid: 952edfb5f864c3d43bf331109224b74e,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 952edfb5f864c3d43bf331109224b74e, type: 2}
   m_IsPrefabParent: 0
@@ -1996,7 +1991,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4508200374320340, guid: f7226cf5fa20e0340877244f58844be1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -18
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 4508200374320340, guid: f7226cf5fa20e0340877244f58844be1, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4395,7 +4390,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4131263335291192, guid: f10055bee167e1648959292b2c7bb4c6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -15
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 4131263335291192, guid: f10055bee167e1648959292b2c7bb4c6, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4473,7 +4468,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4055799400091452, guid: 3ad6e36e1ff19c94d8ce12ee000b35c1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -14.943
+      value: -17.94
       objectReference: {fileID: 0}
     - target: {fileID: 4055799400091452, guid: 3ad6e36e1ff19c94d8ce12ee000b35c1, type: 2}
       propertyPath: m_LocalRotation.x
