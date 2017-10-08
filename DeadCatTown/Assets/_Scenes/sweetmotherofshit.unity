@@ -152,6 +152,16 @@ Prefab:
       propertyPath: tetherDist
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 23883116266190358, guid: c0fe2ddc4e710e945a9b777dd6d56e42,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a715b033a1f934c4a9dc5f8a2f3b48e5, type: 2}
+    - target: {fileID: 23984444403010878, guid: c0fe2ddc4e710e945a9b777dd6d56e42,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e7ffe235de358a644989a00420ffe8a6, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0fe2ddc4e710e945a9b777dd6d56e42, type: 2}
   m_IsPrefabParent: 0
