@@ -20,7 +20,7 @@ public class CameraFollowScript : MonoBehaviour {
 
 		if (catToFollow != null) 
 		{
-			Vector3 moveCamera = new Vector3(catToFollow.transform.position.x - 11, catToFollow.transform.position.y + 10, catToFollow.transform.position.z - 11);
+			Vector3 moveCamera = new Vector3(catToFollow.transform.position.x - 10, catToFollow.transform.position.y + 10, catToFollow.transform.position.z + 9);
 			transform.position = Vector3.Lerp(transform.position, moveCamera, bigSmooth * Time.deltaTime);
 		}
 		///to track astral, lerp to midpoint instead of catsdfgsdfgsgsitself
