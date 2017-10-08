@@ -9,13 +9,14 @@ public class BrokenDoor : Activatable
     {//why does the door take so long to open
 		//AudioSystem.playLocalAudio (AudioType.OpenDoor, transform.position, 1f);
         opened = true;
-		GetComponent<NodeMover>().startMovement();
+		GetComponent<NodeMover>().startMovement(false);
         GetComponent<BoxCollider>().isTrigger = true;
     }
 
     public void close()
     {
         opened = false;
+		GetComponent<NodeMover>().startMovement(true);
         GetComponent<BoxCollider>().isTrigger = false;
     }
 

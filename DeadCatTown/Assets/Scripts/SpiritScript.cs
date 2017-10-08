@@ -28,6 +28,8 @@ public class SpiritScript : MonoBehaviour {
 	public float soulReturnTime;
 	private float soulTime = 1f;
 
+	public bool SpiritIsFrozen = false;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody>();
@@ -50,36 +52,33 @@ public class SpiritScript : MonoBehaviour {
 		initPosition = transform.position;
 
 		Vector3 moveDirection = Vector3.zero;
+		if (!SpiritIsFrozen) {
+			if (((Input.GetAxis ("Vertical") != 0 || Input.GetAxis ("Horizontal") != 0)) && !returningToBody) {
+				moveDirection = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
 
-		if ( ((Input.GetAxis("Vertical") != 0 || Input.GetAxis("Horizontal") != 0)) && !returningToBody) 
-		{
-			moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+				upMove = forward * moveSpeed * Time.deltaTime * Input.GetAxis ("Vertical");
+				rightMove = right * moveSpeed * Time.deltaTime * Input.GetAxis ("Horizontal");
 
-			upMove = forward * moveSpeed * Time.deltaTime * Input.GetAxis("Vertical");
-			rightMove = right * moveSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
+				Vector3 fixedAxis = Vector3.Normalize (rightMove + upMove);
+				transform.forward = fixedAxis;
 
-			Vector3 fixedAxis = Vector3.Normalize(rightMove + upMove);
-			transform.forward = fixedAxis;
+				initPosition += rightMove;
+				initPosition += upMove;	
 
-			initPosition += rightMove;
-			initPosition += upMove;	
+				float tmpDist = Vector3.Distance (baseCat.transform.position, initPosition);
+				if (tmpDist <= tetherDist) {
+					Debug.Log ("nawwww");
+					transform.position += rightMove;
+					transform.position += upMove;
 
-			float tmpDist = Vector3.Distance(baseCat.transform.position, initPosition);
-			if (tmpDist <= tetherDist)
-			{
-			Debug.Log("nawwww");
-			transform.position += rightMove;
-			transform.position += upMove;
-
-			}
+				}
 	
-		}
+			}
 			
-		if (Input.GetKeyDown(KeyCode.R)) 
-		{
-			soulReturnTime = 0f;
+			if (Input.GetKeyDown (KeyCode.R)) {
+				soulReturnTime = 0f;
+			}
 		}
-
 		if (soulReturnTime < soulTime)
 		{
 			soulReturnTime += Time.deltaTime;
