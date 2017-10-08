@@ -36,7 +36,7 @@ public class NodeMover : MonoBehaviour
     
     void move()
     {
-        float currentLerpTime = Time.time - lerpStartTime;
+		float currentLerpTime = Time.deltaTime - lerpStartTime;
         float percentComplete = currentLerpTime / lerpSpeed;
 
         Vector3 lerpPos = Vector3.Lerp(startPosition, nextPosition, percentComplete);
@@ -74,7 +74,7 @@ public class NodeMover : MonoBehaviour
                 currentNode = 0;
             }
 
-            lerpStartTime = Time.time;
+			lerpStartTime = Time.deltaTime;
 
             startPosition = transform.position;
 
@@ -98,7 +98,7 @@ public class NodeMover : MonoBehaviour
         else
             currentNode = 0;
 
-        lerpStartTime = Time.time;
+		lerpStartTime = Time.deltaTime;
 
         startPosition = transform.position;
 
