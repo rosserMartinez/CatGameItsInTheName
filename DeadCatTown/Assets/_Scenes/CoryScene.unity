@@ -192,23 +192,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7226cf5fa20e0340877244f58844be1, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &338550040 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1250439314455192, guid: 32205a02e0777c4409c0e7f24e8041f7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1714688658}
---- !u!114 &338550041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 338550040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c99847d702b9d04ba7f7a483725aa25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  door: {fileID: 1577532535}
 --- !u!1001 &391942647
 Prefab:
   m_ObjectHideFlags: 0
@@ -921,20 +904,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114819235548134460, guid: 32205a02e0777c4409c0e7f24e8041f7,
+    - target: {fileID: 114090788240681626, guid: 32205a02e0777c4409c0e7f24e8041f7,
         type: 2}
-      propertyPath: IsInteractableByPhysicalCat
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54715446902884654, guid: 32205a02e0777c4409c0e7f24e8041f7,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114362052433911824, guid: 32205a02e0777c4409c0e7f24e8041f7, type: 2}
-    - {fileID: 114399095849113254, guid: 32205a02e0777c4409c0e7f24e8041f7, type: 2}
-    - {fileID: 65341660026955816, guid: 32205a02e0777c4409c0e7f24e8041f7, type: 2}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 1577532535}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32205a02e0777c4409c0e7f24e8041f7, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1738317509

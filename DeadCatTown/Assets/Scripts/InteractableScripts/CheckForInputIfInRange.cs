@@ -21,7 +21,7 @@ public class CheckForInputIfInRange : MonoBehaviour {
 			{
 				if (Input.GetKeyDown (KeyCode.E)) 
 				{
-					print ("Physical cat is interacting with " + gameObject.name);
+					//print ("Physical cat is interacting with " + gameObject.name);
 				}
 			}
 
@@ -29,7 +29,7 @@ public class CheckForInputIfInRange : MonoBehaviour {
 			{
 				if (Input.GetKeyDown (KeyCode.F)) 
 				{
-					print ("Astral cat is interacting with " + gameObject.name);
+					//print ("Astral cat is interacting with " + gameObject.name);
 				}
 			}
 

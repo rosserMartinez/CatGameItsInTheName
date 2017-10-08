@@ -16,12 +16,13 @@ public class InteractableScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
 	{
+		//print ("interactable collision on " + gameObject.name);
 		if (IsInteractableByPhysicalCat == true && col.gameObject.tag == "PhysicalCat" ||
             IsInteractableByPhysicalCat == false && col.gameObject.tag == "AstralCat" ) 
 		{
 			SendMessage ("EnteredObjectRange", col.gameObject);
-
-            meshRenderer.material.SetFloat("_Metallic", 1);
+		//	print ("sending the mesg");
+           // meshRenderer.material.SetFloat("_Metallic", 1);
         }
     }
 
@@ -32,7 +33,7 @@ public class InteractableScript : MonoBehaviour {
 		{
 			SendMessage ("ExitedObjectRange", col.gameObject);
 
-            meshRenderer.material.SetFloat("_Metallic", defaultMetallic);
+          //  meshRenderer.material.SetFloat("_Metallic", defaultMetallic);
         }
     }
 }

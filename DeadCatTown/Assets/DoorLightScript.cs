@@ -7,6 +7,7 @@ public class DoorLightScript : Activatable {
 
 	public override void toggleActivation()
 	{
+		
 		base.toggleActivation();
 
 		if (isActive)
@@ -17,11 +18,13 @@ public class DoorLightScript : Activatable {
 
 	public void TurnOn()
 	{
+		print ("light Should Activate");
 		gameObject.SetActive (true);
 	}
 
 	public void TurnOff()
 	{
+		print ("light Should DeActivate");
 		gameObject.SetActive (false);
 	}
 }

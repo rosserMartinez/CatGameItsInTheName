@@ -7,7 +7,7 @@ public class DoorKey : MonoBehaviour
     public LockedDoor door;
 
     PlayerInventory player = null;
-    bool canInteract = false;
+    public bool canInteract = false;
 
 	// Update is called once per frame
 	void Update ()

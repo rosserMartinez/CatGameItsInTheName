@@ -34,7 +34,7 @@ public class ManageElectricEquipment : MonoBehaviour {
 						TurnOnElectricStuff ();
 						//lock astral cat pos here
 					}
-					if (ElectricityIsOn) 
+					else if (ElectricityIsOn) 
 					{
 						ElectricityIsOn = false;
 						TurnOffElectricStuff ();
@@ -45,14 +45,15 @@ public class ManageElectricEquipment : MonoBehaviour {
 			}
 				
 		}
-		if (ElectricityIsOn) {
-			TurnOnElectricStuff ();
-			ElectricityIsOn = false;
-		}//test to see if it works
+		//if (ElectricityIsOn) {
+		//	TurnOnElectricStuff ();
+		//	ElectricityIsOn = false;
+		//}//test to see if it works
 	}
 
 	public void EnteredObjectRange(GameObject _currentCatCol)
 	{
+		//print ("Got the mesg");
 		CheckForInput = true;
 		collidingCat = _currentCatCol;
 	}
