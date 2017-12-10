@@ -1,6 +1,6 @@
-# CatGameItsInTheName
+# The Box Ghost
 
-AKA The Box Ghost, due to distinct lack of cat based art assets
+Formerly Cat Game: It's In The Name, but changed due to distinct lack of cat based art assets
   
     
 	  
